@@ -1,0 +1,33 @@
+{
+  "name": "my-turborepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf ./node_modules && rm -rf ./pnpm-lock.yaml",
+    "dev": "dotenv -- turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "generate:strapi": "cd ./apps/admin && pnpm generate && cd ../../",
+    "generate": "turbo run generate",
+    "start": "turbo run start",
+    "scripts:secrets": "npx ts-node scripts/secrets.ts",
+    "turbo:prune": "turbo prune --scope=\"admin\""
+  },
+  "devDependencies": {
+    "dotenv-cli": "latest",
+    "@presenciaglobal/eslint-config": "0.1.0",
+    "prettier": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@7.29.1"
+}

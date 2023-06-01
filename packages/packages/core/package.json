@@ -1,0 +1,38 @@
+{
+  "name": "@presenciaglobal/core",
+  "version": "0.2.2",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@presenciaglobal/utils": "workspace:*",
+    "pluralize": "^8.0.0",
+    "qs": "^6.11.1"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "4.7.1"
+  },
+  "devDependencies": {
+    "@presenciaglobal/eslint-config": "workspace:*",
+    "@presenciaglobal/tsconfig": "workspace:*",
+    "@strapi/strapi": "4.7.1",
+    "@types/qs": "6.9.7",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/presenciaglobal/patagonia.git"
+}

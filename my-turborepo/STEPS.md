@@ -1,0 +1,4 @@
+- crear relaciones en admin
+- crear los schemas en admin
+- crear token de acceso y agregarlo en variables de entorno
+- ejecutar scripts/secrets.

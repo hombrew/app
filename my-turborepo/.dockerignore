@@ -1,0 +1,7 @@
+.dockerignore
+.git
+Dockerfile
+fly.toml
+litefs
+node_modules
+npm-debug.log
